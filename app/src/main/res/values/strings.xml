@@ -15,5 +15,5 @@
     <string name="answer4">10 * 10 * 0 = 0</string>
     <string name="question4">4) Jimmy has 3 apples, 10 carrots, 7 watermelon, 4 cucumber, 3 pears, and 8 cherries. Jimmy gives 2 watermelon a pear, 1 cucumber and 4 cherries to Cathrine, how many fruits does he have left?</string>
     <string name="submitAnswers">Submit Answers</string>
-    <string name="editTextHint">It's not 24</string>
+    <string name="editTextHint">It\'s not 24</string>
 </resources>

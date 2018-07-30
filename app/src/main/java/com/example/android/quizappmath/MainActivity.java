@@ -2,9 +2,7 @@ package com.example.android.quizappmath;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -33,13 +31,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClick(View view) {
+    public void displayToast(View view) {
         int firstAnswer_score;
         int secondAnswer_score;
         int thirdAnswer_score;
         int fourthAnswer_score;
         int scoreTotal;
-
 
         // Question 1
         boolean firstAnswer;
@@ -76,15 +73,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         // Toast Message Displaying Results
-        scoreTotal = firstAnswer_score + secondAnswer_score + thirdAnswer_score + fourthAnswer_score;
-        Toast.makeText(this, "Good job! You got " + scoreTotal + " right!", Toast.LENGTH_LONG);
-        Toast.show();
 
-
-
+            scoreTotal = firstAnswer_score + secondAnswer_score + thirdAnswer_score + fourthAnswer_score;
+        Toast.makeText(this, "Good job you got " + scoreTotal + " correct!", Toast.LENGTH_LONG).show();
         {
         }
-
-
     }
 }
