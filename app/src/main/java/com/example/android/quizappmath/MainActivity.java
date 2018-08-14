@@ -8,16 +8,24 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     //question 1 and question 2
-    RadioGroup radioGroup, radioGroup2;
+    RadioGroup radioGroup,
+            radioGroup2;
     //question 1 and 2 radiobutton
-    RadioButton answer1, rb1, rb3, answer2;
+    RadioButton answer1,
+            rb1,
+            rb3,
+            answer2;
     //question 3
-    CheckBox cb1, cb2, cb3, cb4;
+    CheckBox cb1,
+            cb2,
+            cb3,
+            cb4;
     //question 4
     EditText editText;
     //submit button
@@ -31,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void displayToast(View view) {
+    public void submitAnswers(View view) {
+
+        TextView textView = findViewById(R.id.scoreTotal);
         int firstAnswer_score;
         int secondAnswer_score;
         int thirdAnswer_score;
@@ -54,29 +64,41 @@ public class MainActivity extends AppCompatActivity {
         } else {
             secondAnswer_score = 0;
         }
+
         //Question 3
-        Boolean thirdAnswer_check2, thirdAnswer_check4;
+
+        Boolean thirdAnswer_check1, thirdAnswer_check2, thirdAnswer_check3, thirdAnswer_check4;
+        thirdAnswer_check1 = cb1.isChecked();
         thirdAnswer_check2 = cb2.isChecked();
+        thirdAnswer_check3 = cb3.isChecked();
         thirdAnswer_check4 = cb4.isChecked();
-        if (!thirdAnswer_check2 && thirdAnswer_check4) {
+
+        if (!thirdAnswer_check1.isChecked()
+                && thirdAnswer_check2.isChecked()
+                && !thirdAnswer_check3.isChecked()
+                && thirdAnswer_check4.isChecked()) {
             thirdAnswer_score = 1;
         } else {
             thirdAnswer_score = 0;
         }
-        // Question 4
-        {
-            String fourthAnswer = editText.getText().toString();
-            if (fourthAnswer.equals("14")) {
-                fourthAnswer_score = 1;
-            } else {
-                fourthAnswer_score = 0;
-            }
-        }
-        // Toast Message Displaying Results
 
-            scoreTotal = firstAnswer_score + secondAnswer_score + thirdAnswer_score + fourthAnswer_score;
-        Toast.makeText(this, "Good job you got " + scoreTotal + " correct!", Toast.LENGTH_LONG).show();
-        {
-        }
+    }// Question 4
+
+    {
+        EditText editText = (EditText) findViewById(R.id.editText);
+
+        String fourthAnswer = editText.getText().toString();
+        String answer = "";
+        boolean isAnswerTrue = answer.equals(fourthAnswer);
     }
 }
+// Toast Message Displaying Results
+
+    scoreTotal=firstAnswer_score+secondAnswer_score+thirdAnswer_score+fourthAnswer_score;
+            if(scoreTotal = 4){
+            display="Good job, you got them all right!";
+            }else{
+            display="Oops try again"}
+
+            TextView.setText("Your score: " + scoreTotal);
+            }
