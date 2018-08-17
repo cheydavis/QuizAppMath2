@@ -2,14 +2,12 @@ package com.example.android.quizappmath;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button display = findViewById(R.id.scoreTotal);
         int scoreTotal = 0, firstAnswer_score, secondAnswer_score, thirdAnswer_score, fourthAnswer_score;
-
-        CharSequence display;
 
         // Question 1
         Boolean firstAnswer;
@@ -75,20 +71,17 @@ public class MainActivity extends AppCompatActivity {
         String fourthAnswer = editText.getText().toString();
         String answer = "22";
     }
-    }
+}
 // Toast Message Displaying Results
-
-    scoreTotal =firstAnswer_score +secondAnswer_score +thirdAnswer_score+fourthAnswer_score;{
-            if(scoreTotal=4)
+    scoreTotal=firstAnswer_score+secondAnswer_score+thirdAnswer_score+fourthAnswer_score;
             {
+            if(scoreTotal=4){
             display="Good job, you got them all right!";
-            }else
-            {
+            }else{
             display="Oops try again";
             }
             Toast toast=Toast.makeText(getApplicationContext(),display,Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER,0,0);
             toast.show();
             }
-
 
