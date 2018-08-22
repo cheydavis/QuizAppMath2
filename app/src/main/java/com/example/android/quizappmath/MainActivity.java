@@ -21,10 +21,9 @@ public class MainActivity extends AppCompatActivity {
             rb3,
             answer2;
     //question 4
-    EditText editText;
     //submit button
     Button submitAnswers;
-    Toast scoreTotal;
+    String display;
 
 
     @Override
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button display = findViewById(R.id.scoreTotal);
         int scoreTotal = 0, firstAnswer_score, secondAnswer_score, thirdAnswer_score, fourthAnswer_score;
-
         // Question 1
         Boolean firstAnswer;
         firstAnswer = rb1.isChecked();
@@ -71,17 +69,17 @@ public class MainActivity extends AppCompatActivity {
         String fourthAnswer = editText.getText().toString();
         String answer = "22";
     }
+
+    // Toast Message Displaying Results
+    int scoreTotal = firstAnswer_score + secondAnswer_score + thirdAnswer_score + fourthAnswer_score;
+
+    {
+        if (scoreTotal == 4) {
+            display = "Good job, you got them all right!";
+        } else {
+            display = "Oops try again!";
+        }
+        Toast.makeText(app.getBaseContext(), (String) data.result, result, Toast.Length_Long).show();
+    }
 }
-// Toast Message Displaying Results
-    scoreTotal=firstAnswer_score+secondAnswer_score+thirdAnswer_score+fourthAnswer_score;
-            {
-            if(scoreTotal=4){
-            display="Good job, you got them all right!";
-            }else{
-            display="Oops try again";
-            }
-            Toast toast=Toast.makeText(getApplicationContext(),display,Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER,0,0);
-            toast.show();
-            }
 
